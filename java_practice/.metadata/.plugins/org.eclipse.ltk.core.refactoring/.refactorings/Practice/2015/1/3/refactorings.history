@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;nationality&apos; in &apos;com.myacorn.exercise.Author&apos; to &apos;country&apos;&#x0D;&#x0A;- Original project: &apos;Practice&apos;&#x0D;&#x0A;- Original element: &apos;com.myacorn.exercise.Author.nationality&apos;&#x0D;&#x0A;- Renamed element: &apos;com.myacorn.exercise.Author.country&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;nationality&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;com.myacorn.exercise{Author.java[Author^nationality" name="country" references="true" setter="false" stamp="1421066156110" textual="false" version="1.0"/>
+</session>
