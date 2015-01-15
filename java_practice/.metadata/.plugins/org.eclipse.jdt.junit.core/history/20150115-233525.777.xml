@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="HelloWorldTest" project="Practice" tests="16" started="8" failures="0" errors="0" ignored="0">
+  <testsuite name="com.myacorn.exercise.HelloWorldTest" incomplete="true">
+    <testcase name="testSortBookRankViaCollection" classname="com.myacorn.exercise.HelloWorldTest" time="0.06"/>
+    <testcase name="testBookTreeMapSize" classname="com.myacorn.exercise.HelloWorldTest" time="0.0"/>
+    <testcase name="testGetNumberOfAuthorsByGender" classname="com.myacorn.exercise.HelloWorldTest" time="0.01"/>
+    <testcase name="testFindGreatestKeyLTEWithNoMatchingKey" classname="com.myacorn.exercise.HelloWorldTest" time="0.0"/>
+    <testcase name="testFindLeastKeyGTEWithMatchingKey" classname="com.myacorn.exercise.HelloWorldTest" time="0.0"/>
+    <testcase name="testSortBookRankViaTreeMap" classname="com.myacorn.exercise.HelloWorldTest" time="21.39"/>
+    <testcase name="testSortBookRankViaCollectionWithDuplicate" classname="com.myacorn.exercise.HelloWorldTest" time="0.01"/>
+    <testcase name="testGetAverageAgeOfAuthorsByGender" classname="com.myacorn.exercise.HelloWorldTest" incomplete="true"/>
+    <testcase name="test" classname="com.myacorn.exercise.HelloWorldTest" incomplete="true"/>
+    <testcase name="testFindGreatestKeyLTEWithMatchingKey" classname="com.myacorn.exercise.HelloWorldTest" incomplete="true"/>
+    <testcase name="testSortBookIsbnViaTreeMap" classname="com.myacorn.exercise.HelloWorldTest" incomplete="true"/>
+    <testcase name="testSortBookIsbnViaTreeMapWithDuplicate" classname="com.myacorn.exercise.HelloWorldTest" incomplete="true"/>
+    <testcase name="testGetNumberOfBooksWrittenByGender" classname="com.myacorn.exercise.HelloWorldTest" incomplete="true"/>
+    <testcase name="testFindLeastKeyGTEWithNoMatchingKey" classname="com.myacorn.exercise.HelloWorldTest" incomplete="true"/>
+    <testcase name="testTreeMapSize" classname="com.myacorn.exercise.HelloWorldTest" incomplete="true"/>
+    <testcase name="testSortBookIsbnViaCollectionWithDuplicate" classname="com.myacorn.exercise.HelloWorldTest" incomplete="true"/>
+  </testsuite>
+</testrun>

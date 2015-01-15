@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="HelloWorldTest" project="Practice" tests="16" started="16" failures="0" errors="0" ignored="0">
+  <testsuite name="com.myacorn.exercise.HelloWorldTest" time="0.06">
+    <testcase name="testSortBookRankViaCollection" classname="com.myacorn.exercise.HelloWorldTest" time="0.033"/>
+    <testcase name="testGetNumberOfAuthorsByGender" classname="com.myacorn.exercise.HelloWorldTest" time="0.006"/>
+    <testcase name="testFindGreatestKeyLTEWithNoMatchingKey" classname="com.myacorn.exercise.HelloWorldTest" time="0.005"/>
+    <testcase name="testFindLeastKeyGTEWithMatchingKey" classname="com.myacorn.exercise.HelloWorldTest" time="0.001"/>
+    <testcase name="testSortBookRankViaTreeMap" classname="com.myacorn.exercise.HelloWorldTest" time="0.001"/>
+    <testcase name="testBookTreeSetSize" classname="com.myacorn.exercise.HelloWorldTest" time="0.002"/>
+    <testcase name="testSortBookRankViaCollectionWithDuplicate" classname="com.myacorn.exercise.HelloWorldTest" time="0.001"/>
+    <testcase name="testGetAverageAgeOfAuthorsByGender" classname="com.myacorn.exercise.HelloWorldTest" time="0.005"/>
+    <testcase name="test" classname="com.myacorn.exercise.HelloWorldTest" time="0.001"/>
+    <testcase name="testFindGreatestKeyLTEWithMatchingKey" classname="com.myacorn.exercise.HelloWorldTest" time="0.0"/>
+    <testcase name="testSortBookIsbnViaTreeMap" classname="com.myacorn.exercise.HelloWorldTest" time="0.001"/>
+    <testcase name="testSortBookIsbnViaTreeMapWithDuplicate" classname="com.myacorn.exercise.HelloWorldTest" time="0.0"/>
+    <testcase name="testGetNumberOfBooksWrittenByGender" classname="com.myacorn.exercise.HelloWorldTest" time="0.001"/>
+    <testcase name="testFindLeastKeyGTEWithNoMatchingKey" classname="com.myacorn.exercise.HelloWorldTest" time="0.0"/>
+    <testcase name="testTreeMapSize" classname="com.myacorn.exercise.HelloWorldTest" time="0.001"/>
+    <testcase name="testSortBookIsbnViaCollectionWithDuplicate" classname="com.myacorn.exercise.HelloWorldTest" time="0.002"/>
+  </testsuite>
+</testrun>

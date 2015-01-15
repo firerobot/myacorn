@@ -1,0 +1,170 @@
+package com.myacorn.exercise;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
+
+import com.myacorn.exercise.Author.Sex;
+
+
+public class HelloWorld {
+
+	public static void main (String[] args) {
+		System.out.println("Hello World");
+	}
+	
+	/*
+	 * Build a tree map which is useful for binary search
+	 */
+//	public static TreeMap<String, Integer> buildTreeMap(List<String> inputList) {
+//
+//		TreeMap<String, Integer> treeMap = new TreeMap<String, Integer>(); 
+//		for (int i = 0; i < inputList.size(); i++) {
+//			treeMap.put(inputList.get(i), i);
+//		}
+//		return treeMap;
+//	}
+	
+	public static TreeSet<String> buildTreeSet(List<String> inputList) {
+		return inputList.stream().collect(Collectors.toCollection(TreeSet::new));
+	}
+	
+	public static String findGreatestKeyLTE(List<String> inputList, String key) {
+		return buildTreeSet(inputList).floor(key);
+	}
+	
+	public static String findLeastKeyGTE(List<String> inputList, String key) { 
+		return buildTreeSet(inputList).ceiling(key);
+	}
+
+/*	
+	public static <K,V extends Comparable<? super V>>
+	SortedSet<Map.Entry<K,V>> entriesSortedByValues(Map<K,V> map) {
+	    SortedSet<Map.Entry<K,V>> sortedEntries = new TreeSet<Map.Entry<K,V>>(
+	        new Comparator<Map.Entry<K,V>>() {
+	            @Override public int compare(Map.Entry<K,V> e1, Map.Entry<K,V> e2) {
+	                int res = e1.getValue().compareTo(e2.getValue());
+	                return res != 0 ? res : 1;
+	            }
+	        }
+	    );
+	    sortedEntries.addAll(map.entrySet());
+	    return sortedEntries;
+	}
+*/
+
+	//old way
+/*
+	public static TreeMap<Book, Integer> buildBookTreeMap(List<Book> inputList) {
+
+		TreeMap<Book, Integer> treeMap = new TreeMap<Book, Integer>(new Comparator<Book>() {
+			public int compare(Book b1, Book b2) {
+//				return b1.getIsbn().compareTo(b2.getIsbn());    //based on ISBN
+				return b1.getRank().compareTo(b2.getRank());	//based on Rank but has to be non-primitive type
+			}
+		});
+		
+		for (int i = 0; i < inputList.size(); i++) {
+			treeMap.put(inputList.get(i), i);
+		}
+		
+		Iterator<Book> iter = treeMap.navigableKeySet().iterator();
+		while (iter.hasNext()) {
+			System.out.println(iter.next());
+		}
+		return treeMap;
+	}
+*/
+	
+	/*
+	 * Using lambda expression to initialise a treeSet
+	 */
+	public static TreeSet<Book> buildBookTreeSet(List<Book> inputList, Comparator<Book> comparator) {
+
+//		TreeMap<Book, Integer> treeMap = new TreeMap<Book, Integer>( (Book b1, Book b2) -> b1.getRank().compareTo(b2.getRank()) );
+//		TreeMap<Book> treeMap = new TreeMap<Book, Integer>( comparator ); 
+//			
+//		for (int i = 0; i < inputList.size(); i++) {
+//			treeMap.put(inputList.get(i), i);
+//		}
+//		
+//		treeMap.navigableKeySet().forEach(System.out::println);
+		TreeSet<Book> treeSet = inputList.stream().collect(Collectors.toCollection(TreeSet::new));
+		treeSet.forEach(System.out::println);
+		return treeSet;
+	}
+	
+	/*
+	 * Return an array of books (with duplicates removed) sorted by the given book comparator
+	 */
+	public static Book[] sortBookViaTreeMap(List<Book> inputList, Comparator<Book> comparator) {
+
+		TreeMap<Book, Integer> treeMap = new TreeMap<Book, Integer>(comparator);
+		for (int i = 0; i < inputList.size(); i++) {
+			treeMap.put(inputList.get(i), i);
+		}
+		return treeMap.navigableKeySet().toArray(new Book[treeMap.size()]);		
+	}
+	
+	/*
+	 * Return an array of books sorted by the given book comparator
+	 */
+	public static Book[] sortBookViaCollection(List<Book> inputList, Comparator<Book> comparator) {
+		Collections.sort(inputList, comparator);
+		return inputList.toArray(new Book[inputList.size()]);		
+	}
+	
+	/*
+	 * Return the number of books which has a male/female author from the given list
+	 * Notice the use of Enum typed parameter
+	 */
+	public static long getNumberOfBooksWrittenByGender(List<Book> inputList, Enum<Sex> gender) {
+		return inputList.stream().filter(b -> b.getAuthor().getGender() == gender).count();
+	}
+	
+	/* 
+	 * Return the number of male/female authors who wrote the books in the given list
+	 * 1. Build a Hash Map of all authors to eliminate duplication
+	 * 2. use aggregate functions to find the count from the key set
+	 */
+	public static long getNumberOfAuthorsByGender(List<Book> inputList, Enum<Sex> gender) {
+		Map<Author, Integer> hashMap = new HashMap<Author, Integer>();
+		for (int i = 0; i < inputList.size(); i++) {
+			hashMap.put(inputList.get(i).getAuthor(), i);
+		}
+		return hashMap.keySet().stream().filter(a -> a.getGender() == gender).count();
+	}
+	
+	/*
+	 * Return the average age of authors of the given gender in the given book list 
+	 * 
+	 * Implementation: there is no need to build a HashMap explicitly. A HashSet is backed by HashMap.
+	 * Note: mapToInt parameter is called a mapper
+	 */
+	public static double getAverageAgeOfAuthorsByGender(List<Book> inputList, Enum<Sex> gender) {
+//		Map<Author, Integer> hashMap = new HashMap<Author, Integer>();	
+//		for (int i = 0; i < inputList.size(); i++) {
+//			hashMap.put(inputList.get(i).getAuthor(), i);
+//		}
+		Set<Author> set = (Set<Author>)inputList.stream().map(Book::getAuthor).collect(Collectors.toCollection(HashSet::new));
+		return set.stream().filter(a -> a.getGender() == gender)
+				.mapToInt(Author::getAge)
+				.average().getAsDouble();
+	}
+	
+	/*
+	public Map<String, List<Book>> groupBooksByAuthorGender(List<Book> inputList) {
+		
+		return inputList.stream().collect(Collectors.
+//				Book::getState,
+//                Collectors.groupingBy(Person::getCity)));
+	}
+	*/
+}
