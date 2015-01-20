@@ -1,0 +1,14 @@
+package com.myacorn.exercise;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CaseInsensitiveStringTest {
+	@Test
+	public void testEquals() {
+		CaseInsensitiveString cis = new CaseInsensitiveString("Polish");
+		String s = "polish";
+		assertEquals(true, cis.equals(s));
+	}
+}

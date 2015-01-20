@@ -1,0 +1,20 @@
+package com.myacorn.exercise;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CaseInsensitiveStringTest {
+	@Test
+	public void testEquals() {
+		CaseInsensitiveString cis = new CaseInsensitiveString("Polish");
+		String s = "polish";
+		assertEquals(false, cis.equals(s));  //cis is not equal to s
+		assertEquals(false, s.equals(cis));  //s is not equal to cis
+		
+		CaseInsensitiveString cis2 = new CaseInsensitiveString("PolisH");
+		assertEquals(true, cis.equals(cis2));
+		assertEquals(true, cis2.equals(cis));
+		assertEquals(cis.hashCode(), cis2.hashCode());
+	}
+}
