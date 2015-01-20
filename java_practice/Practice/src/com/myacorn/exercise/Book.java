@@ -60,4 +60,13 @@ public class Book {
 		.append(this.rank);
 		return buf.toString();
 	}
+	
+	//Create static compare methods, it can be reference using the double colon syntax
+	public static int compareByIsbn(Book a, Book b) {
+		return a.getIsbn().compareTo(b.getIsbn());
+	}
+	
+	public static int compareByRank(Book a, Book b) {
+		return a.getRank().compareTo(b.getRank());
+	}
 }
