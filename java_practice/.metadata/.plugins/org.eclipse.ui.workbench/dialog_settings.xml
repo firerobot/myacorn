@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
 		<item value="-55" key="DIALOG_X_ORIGIN"/>
-		<item value="-92" key="DIALOG_Y_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="596" key="dialogHeight"/>
@@ -20,6 +20,19 @@
 		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.jdt.ui.java"/>
+		</list>
+	</section>
+	<section name="ShowViewDialog">
+		<item value="392" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="477" key="DIALOG_HEIGHT"/>
+		<item value="648" key="DIALOG_X_ORIGIN"/>
+		<item value="134" key="DIALOG_Y_ORIGIN"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui"/>
+			<item value="org.eclipse.datatools"/>
+			<item value="org.eclipse.wst.server.ui"/>
 		</list>
 	</section>
 </section>

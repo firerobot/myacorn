@@ -1,0 +1,5 @@
+package com.myacorn.dao;
+
+public class MySqlDatabase {
+
+}
