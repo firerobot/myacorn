@@ -49,8 +49,7 @@ public class V1_status {
 //		JSONArray json = new JSONArray();
 		
 		try {
-			DataSource ds = MySqlDatabase.MySqlDataSource();
-			conn = ds.getConnection();
+			conn = MySqlDatabase.MySqlDataSource().getConnection();
 			query = conn.prepareStatement("select sysdate() DATETIME ");
 /*			
 			query = conn.prepareStatement("select to_char(sysdate, 'YYYY-MM-DD HH24:MI:SS') DATETIME " +
@@ -67,6 +66,8 @@ public class V1_status {
 			json = dao.queryCheckDbConnection();
 			myString = json.toString();
 */
+			query.close();
+			
 			returnString = "<p>Database Status</p> " +
 				"<p>Database Date/Time return: " + myString + "</p>";
 			
